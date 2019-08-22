@@ -1,0 +1,92 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "WEBAPP01"
+        },
+        "networkSecurityGroupName": {
+            "value": "NSG-FRONTEND"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "HTTP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "80"
+                    }
+                },
+                {
+                    "name": "HTTPS",
+                    "properties": {
+                        "priority": 320,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "443"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "FRONTEND"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Network/virtualNetworks/VNFRONTEND"
+        },
+        "virtualMachineName": {
+            "value": "WEBAPP01"
+        },
+        "virtualMachineRG": {
+            "value": "RG-WEBAPPTEST"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS1_v2"
+        },
+        "adminUsername": {
+            "value": "SentiaAdmin"
+        },
+        "adminPassword": {
+            "reference": {
+              "keyVault": {
+                "id": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.KeyVault/vaults/KV-WEBAPPTEST"
+              },
+              "secretName": "VMAdminPassword"
+            }
+          },
+        "diagnosticsStorageAccountName": {
+            "value": "stgwebapptest"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Storage/storageAccounts/stgwebapptest"
+        },
+        "loadBalancerId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Network/loadBalancers/LB-WEBAPPTEST"
+        },
+        "backendPoolId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Network/loadBalancers/LB-WEBAPPTEST/backendAddressPools/BP-WEBAPPTEST"
+        },
+        "backendPoolName": {
+            "value": "BP-WEBAPPTEST"
+        },
+        "loadBalancerRG": {
+            "value": "RG-WEBAPPTEST"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "VNFRONTEND"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "resourceGroup": {
+            "value": "RG-WEBAPPTEST"
+        },
+        "addressPrefix": {
+            "value": "172.66.100.0/24"
+        },
+        "subnetName": {
+            "value": "FRONTEND"
+        },
+        "subnetAddressPrefix": {
+            "value": "172.66.100.0/24"
+        },
+        "enableDdosProtection": {
+            "value": false
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "aseName": {
+            "value": "ASE-WEBAPPTEST"
+        },
+        "subscriptionId": {
+            "value": "dca3234d-fba9-4072-8eed-aa1d77407283"
+        },
+        "location": {
+            "value": "West Europe"
+        },
+        "vnetName": {
+            "value": "VNFRONTEND"
+        },
+        "subnetName": {
+            "value": "FRONTEND"
+        },
+        "vnetId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Network/virtualNetworks/VNFRONTEND"
+        },
+        "vNetResourceGroupName": {
+            "value": "RG-WEBAPPTEST"
+        },
+        "vnetAddress": {
+            "value": "172.66.100.0/24"
+        },
+        "subnetAddress": {
+            "value": "172.66.100.0/24"
+        },
+        "subnetRouteTableName": {
+            "value": "ASE-WEBAPPTEST-Route-Table"
+        },
+        "subnetNSGName": {
+            "value": "NSG-FRONTEND"
+        },
+        "ilbMode": {
+            "value": 3
+        },
+        "subnetId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Network/virtualNetworks/VNFRONTEND/subnets/FRONTEND"
+        }
+    }
+}

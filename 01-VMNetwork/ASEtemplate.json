@@ -1,0 +1,63 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "aseName": {
+            "type": "String"
+        },
+        "subscriptionId": {
+            "type": "String"
+        },
+        "location": {
+            "type": "String"
+        },
+        "vnetName": {
+            "type": "String"
+        },
+        "subnetName": {
+            "type": "String"
+        },
+        "vnetId": {
+            "type": "String"
+        },
+        "VNetResourceGroupName": {
+            "type": "String"
+        },
+        "vnetAddress": {
+            "type": "String"
+        },
+        "subnetAddress": {
+            "type": "String"
+        },
+        "subnetRouteTableName": {
+            "type": "String"
+        },
+        "subnetNSGName": {
+            "type": "String"
+        },
+        "ilbMode": {
+            "type": "Int"
+        },
+        "subnetId": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/hostingEnvironments",
+            "apiVersion": "2019-02-01",
+            "name": "[parameters('aseName')]",
+            "location": "[parameters('location')]",
+            "tags": {},
+            "kind": "ASEV2",
+            "properties": {
+                "name": "[parameters('aseName')]",
+                "location": "[parameters('location')]",
+                "InternalLoadBalancingMode": "[parameters('ilbMode')]",
+                "virtualNetwork": {
+                    "Id": "[parameters('subnetId')]"
+                }
+            }
+        }
+    ]
+}

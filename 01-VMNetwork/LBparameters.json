@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "name": {
+            "value": "LB-WEBAPPTEST"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "subnetId": {
+            "value": "/subscriptions/dca3234d-fba9-4072-8eed-aa1d77407283/resourceGroups/RG-WEBAPPTEST/providers/Microsoft.Network/virtualNetworks/VNFRONTEND/subnets/FRONTEND"
+        },
+        "privateIPAllocationMethod": {
+            "value": "Dynamic"
+        }
+    }
+}
